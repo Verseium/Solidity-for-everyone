@@ -9,7 +9,10 @@ This repository gives comprehensive explanation and resources for learning solid
 3. 
 
 
-| - | - | - | - |
+## Table of contents
+
 | Index | Topic | Discussion | Resources |
 | - | - | - | - |
-| 0 |  | - | - |
+| 0 | Basics | Fundamentals | Go to link |
+| - | - | - | - |
+| 1 |  | - | - |
