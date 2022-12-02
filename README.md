@@ -4,9 +4,10 @@ This repository gives comprehensive explanation and resources for learning solid
 
 ## Reasons for learning solidity
 
-1. Ethereum(worlds second top blockchain ) uses it
+1. Ethereum(worlds second top blockchain ) uses it.
 2. Polygon, Avalanche, Arbitrum, Optimism and Polkadot uses it.
-3. 
+3. Its a curly-bracket language.
+4. It is influenced by C++, Python and Javascript.
 
 
 ## Table of contents
