@@ -211,3 +211,39 @@ contract Payable {
 
 ```
 
+> Enums (Enumerations)
+>> Enums, or enumeration, values in Solidity consist of user-defined data types. This data type is used explicitly for constant values, such as the names of integral constants, making a smart contract easier to read and maintain. Enums can help reduce the incidence of bugs in your code.
+
+Enums limit a variable to a few predefined values and each copy maintains its value.
+
+Options are represented by integer values beginning with zero; you can also specify a default value for the enum.
+
+```
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract EnumExample {
+
+    // Declaring enum template
+    enum choices{
+        available,
+        notAvaialble
+    }
+
+    // Using the enum template
+    choices public presentChoice;
+    // This varaible can have either presentChoice.available or presentChoice.notAvailable 
+    // By default enums will have the first one as its value
+    // Which means by default it is presentChoice.available
+
+}
+
+
+```
+
+> Bytes
+>> In Solidity, byte refers to 8-bit signed integers. Everything in memory is stored in bits with binary values 0 and 1.
+
+
+
