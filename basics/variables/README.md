@@ -244,6 +244,27 @@ contract EnumExample {
 
 > Bytes
 >> In Solidity, byte refers to 8-bit signed integers. Everything in memory is stored in bits with binary values 0 and 1.
+>> More explanation in https://jeancvllr.medium.com/solidity-tutorial-all-about-bytes-9d88fdb22676
+>> As an example, this is how we would store the string “abcd” in one full word (32 bytes): 0x6162636400000000000000000000000000000000000000000000000000000000
+>> This is how the number 0x61626364 would be stored: 0x0000000000000000000000000000000000000000000000000000000061626364
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract bytesExample {
+
+    // Bytes
+    // without
+    // string public name = "Very Good";// Gas : 230650 gas
+
+    // with
+    // bytes public name = "Very Good";// Gas : 230650 gas
+    // bytes9 public name = "Very Good lessons";// Gas : 143106 gas
+    bytes32 public name = "Very Good lessons";// Gas :131755 gas
+
+}
+```
 
 
 
