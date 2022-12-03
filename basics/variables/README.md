@@ -360,6 +360,113 @@ contract arraysExample {
 
 }
 ```
+<hr/> 
+
+> Structs
+>> The struct reference type in Solidity refers to a new (or custom) data type. You can use the struct keyword to define a structure, made up of multiple variables, which can be both value type and reference type.
+>>
+>> In most cases, struct is used to represent a record.
+>>
+>> It’s important to note that because structs must be finite in size, they cannot contain members of their type. This is not to say that struct cannot contain struct; for example, struct A can contain struct B, but struct A cannot contain struct A. 
+
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract structsExample {
+
+    // STRUCTS  
+
+    struct Details{// Template
+
+        uint age;
+        string name;
+
+    }   
+
+    // Initializing the struct
+    // syntax
+    // structTemplateName visibility structVariableName;
+    Details public details;
+
+
+    // Add data
+    function addData(uint _age,string memory _name)
+                public{
+
+                    details.age  = _age;
+                    details.name = _name;
+
+                    // OR
+
+                    // Details memory someVariableName;
+                    // someVariableName = Details(_age,_name);
+
+                }                           
+
+
+}
+```
+
+
+<hr/> 
+
+> Mapping
+>> In Solidity, mapping functions similarly to a hashtable or dictionary in other programming languages.
+>>
+>> Mapping is the most frequently used reference type in Solidity. Mapping types are used to store data in the form of key-value pairs, where the key can be any of the inbuilt data types except for reference types, and the value can be any type.
+>>
+>> The mapping function can retrieve stored data using the supplied key.
+>>
+>> Because Solidity mapping only provides an option for one data storage location, this data type is permitted for state elements.
+>>
+>> The mapping type is declared using the mapping keyword followed by data types for both key and value, separated by the => notation. 
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract mappingsExample {
+
+    // Mappings
+    /*
+
+        | Left side data | Right Side Data |
+        |----------------|-----------------|
+        | address        | NFT link        |
+
+
+                address => NFT link
+                   /            |
+                  /             |
+                 /              |___________________________
+                /                                           |
+               /                                           \|/
+              /                                     ipfs://qwas......../1
+            \|/   
+    0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+
+    
+    */
+
+    // Syntax
+    // mapping(left => right) visbility variableName;
+    mapping(address => string) public mappingVariable;
+
+    // Create Data
+    function addData(address  _address,string memory _nftDataLink)
+                public{
+                    mappingVariable[_address] = _nftDataLink;
+                }
+
+
+
+}
+```
+
+
+<hr/> 
 
 
 
