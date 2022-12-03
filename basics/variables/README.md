@@ -23,4 +23,34 @@ contract variables{ // Contract Declaration
     string public name;
 }
 ```
+There are three main types of variable categories
+
+```
+
+// SPDX-License-Identifier: GPL-3.0 
+pragma solidity ^0.8.0;
+
+
+contract variables{ // Contract Declaration
+
+    // VARIABLES
+
+    // Main types
+    // Booleans
+
+    /* Booleans are generally used to check whether something is true or false */
+
+    // Integers
+
+    /* Integers are used to store numbers, bigintegers and other numeric type */
+
+
+    // Strings
+    /* Strings store text type characters */
+
+    
+}
+
+```
+
 
