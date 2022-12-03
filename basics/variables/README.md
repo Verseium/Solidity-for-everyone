@@ -57,6 +57,9 @@ contract variables{ // Contract Declaration
     string public name;
 }
 ```
+
+<hr/> 
+
 > There are three main types of variable categories
 
 ```
@@ -86,10 +89,14 @@ contract variables{ // Contract Declaration
 }
 
 ```
+
+<hr/> 
+
 > Signed Integer
 >> A signed integer, declared with the int keyword, is a value data type that can be used to store either positive or negative values in smart contracts.
 
 int is an abbreviation for int256, which has a range of -2 ** 255 to 2 ** 255 - 1. This value type takes up to 32B by default, but we can make it smaller by specifying the number of bits in steps of 8. For example: int8, int16, int32, etc.
+
 
 ```
 
@@ -107,6 +114,8 @@ contract variables{ // Contract Declaration
     
 }
 ```
+
+<hr/> 
 
 > Unsigned Integeres (Most important)
 >> An unsigned integer, declared with the uint keyword, is a value data type that must be non-negative; that is, its value is greater than or equal to zero.
@@ -132,6 +141,8 @@ contract variables{ // Contract Declaration
 
 ```
 
+<hr/> 
+
 > Booleans
 >> Booleans are used to check a condition and it can have either true or false
 
@@ -150,6 +161,9 @@ contract variables{ // Contract Declaration
     
 }
 ```
+
+<hr/> 
+
 > Addresses
 >> An address value type is specifically designed to hold up to 20B, or 160 bits, which is the size of an Ethereum address.
 
@@ -173,6 +187,8 @@ contract variables{ // Contract Declaration
     
 }
 ```
+
+<hr/> 
 
 >> Further explanation from : https://solidity-by-example.org/payable/
 
@@ -221,6 +237,8 @@ contract Payable {
 
 ```
 
+<hr/> 
+
 > Enums (Enumerations)
 >> Enums, or enumeration, values in Solidity consist of user-defined data types. This data type is used explicitly for constant values, such as the names of integral constants, making a smart contract easier to read and maintain. Enums can help reduce the incidence of bugs in your code.
 
@@ -252,6 +270,8 @@ contract EnumExample {
 
 ```
 
+<hr/> 
+
 > Bytes
 >> In Solidity, byte refers to 8-bit signed integers. Everything in memory is stored in bits with binary values 0 and 1.
 >>
@@ -278,6 +298,8 @@ contract bytesExample {
 
 }
 ```
+<hr/> 
+
 
 > Arrays
 > 
