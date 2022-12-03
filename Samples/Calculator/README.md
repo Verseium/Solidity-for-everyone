@@ -1,0 +1,1 @@
+# Sample contract for calculator
