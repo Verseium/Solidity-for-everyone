@@ -278,9 +278,13 @@ contract bytesExample {
 ```
 
 > Arrays
+> 
 >> Example : https://solidity-by-example.org/array/ 
+>> 
 >> Arrays are a group of variables of the same data type, with each variable having a unique index. Array size can be fixed or dynamic. Arrays data structures are dependent on other data types. They keep these data in storage and simplify the process of repetition, storage, and search for variables or a subset of variables within a group.We can retrieve a requested variable by using the unique index location.
+>> 
 >>> Fixed size array.  : The Fixed-size arrays have a predefined size when they are declared.
+>>> 
 >>> Dynamic size array : Dynamic arrays do not have a predefined size when they are declared. Instead, their size is determined at run time.
 
 
