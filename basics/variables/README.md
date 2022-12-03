@@ -35,6 +35,8 @@ Two separate variables can refer to the exact location, and any change in one va
 - Mapping
 
 <hr/> 
+
+
 ```
 // SPDX-License-Identifier: GPL-3.0 
 pragma solidity ^0.8.0;
