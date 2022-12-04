@@ -182,6 +182,10 @@ contract modifierExample{
 
 * Fallback functions
 
+Resources : 
+
+1. https://medium.com/upstate-interactive/the-truth-about-fallback-functions-in-solidity-a2c604f8e66b
+
 A contract can have exactly one fallback function. A fallback function is an unnamed external function without any input or output parameters. EVM executes the fallback function on a contract if none of the other functions match the intended function calls.
 
 The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided with the function call. Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.
@@ -196,4 +200,65 @@ Properties of a fallback function:
 6. It is mandatory to mark it external.
 7. It is limited to 2300 gas when called by another function. It is so for as to make this function call as cheap as possible.
 
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;  
+
+contract fallbackExample{
+
+    // Events
+    event Log(uint gas);
+
+    // send,transfer method: 2300 gas will be returned
+    // call method: all gas will be returned
+        
+    // Fallback
+    fallback() external payable{
+
+        emit Log(gasleft());
+
+    }
+
+    // Function
+    function getBalance()
+                public
+                view
+                returns(uint){
+                    return address(this).balance;
+                }
+
+
+
+}// address: 0x11bcD925D9c852a3eb40852A1C75E194e502D2b9 
+
+// Another contract to send the balance
+contract senderContract{
+
+    // transfer or send methods
+    function transferToFallBack(address payable _to)
+                public
+                payable{
+
+                    // send ethert to the contract
+                    _to.transfer(msg.value);// ** Include some value in the value field to send the amount
+
+                }
+
+
+    // call methods
+    function callToFallBack(address payable _to)
+                public
+                payable{
+
+                    // send ethert to the contract
+                    (bool sent,) = _to.call{value:msg.value}(''); // ** Include some value in the value field to send the amount
+                    require(sent,"Failed to send");
+
+                }
+
+
+
+
+}
+```
 
