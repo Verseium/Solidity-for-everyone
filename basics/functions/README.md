@@ -90,3 +90,96 @@ contract modifierExample{
 
 }
 ```
+
+<hr/>
+
+* Return multiple datatypes
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;  
+
+contract modifierExample{
+
+    // Variables
+    address public owner;
+
+
+    constructor(){
+
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner(){
+        require(owner == msg.sender,"The caller doesnt have access");
+        _; // The rest of the code will be implemented in actual function 
+    }                                                               
+
+
+    function check()
+            view
+            public
+            onlyOwner // Modifier here
+            returns(string memory,string memory,bool){
+                return ("Owner has access","Owner do have the access",true);
+            }
+
+
+}
+```
+
+<hr/>
+
+* Destructuring
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;  
+
+contract modifierExample{
+
+    // Variables
+    address public owner;
+
+    string public msg1;
+    string public msg2;
+    bool public condition;
+
+    constructor(){
+
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner(){
+        require(owner == msg.sender,"The caller doesnt have access");
+        _; // The rest of the code will be implemented in actual function 
+    }                                                               
+
+
+    function check()
+            view
+            public
+            onlyOwner // Modifier here
+            returns(string memory,string memory,bool){
+                return ("Owner has access","Owner do have the access",true);
+            }
+
+
+    function destructuring()
+            public
+            {
+                (msg1,msg2,condition) = check();// Check returns three datatypes
+                // or
+                // (msg1,,) = check(); // Here only msg1 gets the value
+
+            }        
+
+
+}
+```
+
+<hr/>
+
+* Fallback functions
+
+
