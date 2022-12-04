@@ -18,4 +18,4 @@ This repository gives comprehensive explanation and resources for learning solid
 | 1 | Basics2 | Conditionals, Scope, state mutability and visibility | - |
 | 2 | Basics3 | Operators | - |
 | 3 | Basics4 | Loops | - |
-| 4 | Basics5 | Operators | - |
+| 4 | Basics5 | Bits and bytes | - |
