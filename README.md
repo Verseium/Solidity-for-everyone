@@ -19,3 +19,4 @@ This repository gives comprehensive explanation and resources for learning solid
 | 2 | Basics3 | Operators | - |
 | 3 | Basics4 | Loops | - |
 | 4 | Basics5 | Bits and bytes | - |
+| 5 | Basics6 | Global Variables | - |
