@@ -57,3 +57,36 @@ contract functionsExample {
 <hr/>
 
 * Modifiers
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;  
+
+contract modifierExample{
+
+    // Variables
+    address public owner;
+
+
+    constructor(){
+
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner(){
+        require(owner == msg.sender,"The caller doesnt have access");
+        _; // The rest of the code will be implemented in actual function 
+    }                                                               
+
+
+    function check()
+            view
+            public
+            onlyOwner // Modifier here
+            returns(string memory){
+                return "Owner has access";
+            }
+
+
+}
+```
