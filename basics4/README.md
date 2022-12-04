@@ -10,6 +10,7 @@ Solidity is a language that supports the following loops used while creating sma
 
 ## for loop
 
+<hr/>
 
 ```
 // SPDX-License-Identifier: MIT
