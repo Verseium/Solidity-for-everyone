@@ -182,4 +182,18 @@ contract modifierExample{
 
 * Fallback functions
 
+A contract can have exactly one fallback function. A fallback function is an unnamed external function without any input or output parameters. EVM executes the fallback function on a contract if none of the other functions match the intended function calls.
+
+The solidity fallback function is executed if none of the other functions match the function identifier or no data was provided with the function call. Only one unnamed function can be assigned to a contract and it is executed whenever the contract receives plain Ether without any data. To receive Ether and add it to the total balance of the contract, the fallback function must be marked payable. If no such function exists, the contract cannot receive Ether through regular transactions and will throw an exception.
+
+Properties of a fallback function:
+
+1. Has no name or arguments.
+2. If it is not marked payable, the contract will throw an exception if it receives plain ether without data.
+3. Can not return anything.
+4. Can be defined once per contract.
+5. It is also executed if the caller meant to call a function that is not available
+6. It is mandatory to mark it external.
+7. It is limited to 2300 gas when called by another function. It is so for as to make this function call as cheap as possible.
+
 
