@@ -16,4 +16,5 @@ This repository gives comprehensive explanation and resources for learning solid
 | - | - | - | - |
 | 0 | Basics | Fundamentals, Variables , Functions | Go to link |
 | 1 | Basics2 | Conditionals, Scope, state mutability and visibility | - |
-| 1 | Basics3 | Operators | - |
+| 2 | Basics3 | Operators | - |
+| 3 | Basics4 | Operators | - |
