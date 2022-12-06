@@ -63,3 +63,59 @@ contract decisionMakingExample{
 
 ## State Mutability 
 
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;// it means that the versions after 0.8.0
+
+contract mutabilityExample{
+
+
+    // Variables --> state variable or global scope variable
+    string public teamA = "Spain";
+    string public teamB = "England";
+
+    // Function
+    // syntax
+    /* function functionName(args)
+                 visibility --> public
+                 mutability --> 
+                 returns(data type){
+                     steps
+                 }*/
+
+    // state mutability --> blank space
+    function changeTeamA(string memory _teamA)
+                public{
+                    teamA = _teamA;// trying to change the data
+                }
+
+
+    // state mutability --> view
+    function viewTeamB()
+                        public
+                        view
+                        returns(string memory){
+
+                            //teamB = _teamB;// you are trying to change the data
+
+                           return teamB; // just view the global vraible --> teamB                                
+
+                        }
+
+
+    // state mutability --> pure
+    function viewLocalTeam(string memory _localTeam)
+                        public
+                        pure
+                        returns(string memory){
+
+                           return _localTeam; // just view the local vraible --> _localTeam                              
+
+                        }                                      
+
+
+}
+
+
+```
+
