@@ -50,6 +50,43 @@ contract decisionMakingExample{
 
 ## Scope
 
+```
+contract scope{
+
+
+    // Varaibles inside this space are called state variables
+    // state variables
+
+    uint public a = 10;
+
+
+    function justChecking()
+                pure 
+                public
+                returns(uint){
+
+                    // local varaible    
+                    uint localA = 20;
+                    return localA;
+
+
+                }
+
+
+
+         function scoping()
+                view 
+                public
+                returns(uint){
+
+                    return a;// state variable which is of global scope
+
+
+                }        
+
+
+}
+```
 
 
 
