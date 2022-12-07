@@ -46,3 +46,47 @@ contract myCoin{
 
 }
 ```
+
+<hr/>
+
+Little advanced
+
+```
+// SPDX-License-Identifier: GPL-3.0-only
+pragma solidity ^0.8.0;
+
+contract staking{
+
+    mapping(address => uint) public balances;
+
+    uint public totalAmount;
+    uint public amountToBeMinted;
+    address public owner;
+
+    constructor(uint _amount){
+        totalAmount = _amount;
+        amountToBeMinted = _amount;
+        owner = msg.sender;
+    }
+
+    // Modifiers
+    modifier onlyOwner(){
+        require(msg.sender == owner,"Dont have the access");
+        _;
+    }
+
+    function mint(address payable _to,uint _mintingAmount)
+                public
+                onlyOwner{
+                  
+                    require(_mintingAmount <= totalAmount,"Greater than total amount");
+                    require(_mintingAmount <= amountToBeMinted,"Greater than minting limits amount");
+
+                    balances[_to] += _mintingAmount;
+                    amountToBeMinted -= _mintingAmount;
+
+                }
+
+
+}
+```
