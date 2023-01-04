@@ -8,6 +8,7 @@ This repository gives comprehensive explanation and resources for learning solid
 2. Polygon, Avalanche, Arbitrum, Optimism and Polkadot uses it.
 3. Its a curly-bracket language.
 4. It is influenced by C++, Python and Javascript.
+5. In order to make any application on DeFi or dApps Solidity is required
 
 
 ## Table of contents
