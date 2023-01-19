@@ -72,7 +72,8 @@ Following are the commonly used relational operators in Solidity:
 4. `<`  : Less than operator, returns true if the left operand is less than the right operand.
 5. `>=` : Greater than or equal to operator, returns true if the left operand is greater than or equal to the right operand.
 6. `<=` : Less than or equal to operator, returns true if the left operand is less than or equal to the right operand.
-
+### Hands on Practice 
+```
 pragma solidity ^0.8.0;
 
 contract RelationalOperators {
@@ -86,8 +87,10 @@ contract RelationalOperators {
         b = _b;
     }
 
-    // Function to check equality
-    // `bool` stands for boolean which is either `true` or `false` and if the relationship is true then it would return `true` and if not then `false` will be returned 
+    //  Function to check equality
+    //  `bool` stands for boolean which is either `true` or `false` and if the relationship 
+    //  is true then it would return `true` and if not then `false` will be returned 
+    
     function isEqual() public view returns (bool) {
         return (a == b);
     }
@@ -118,7 +121,8 @@ contract RelationalOperators {
     }
 }
 
-
+```
+![Relationaloperator](https://user-images.githubusercontent.com/88394912/213473034-72a031f4-45c4-4504-8a4d-26e0e9d04c23.PNG)
 
 
 ## Logical
