@@ -228,15 +228,16 @@ contract BitwiseOperations {
 ![bitwiseand](https://user-images.githubusercontent.com/88394912/213513101-846b6082-8ad3-4319-a3ae-8d1c63fce3a7.PNG)
 
 Above is an implementation of the bitwise and. 
-As discussed earlier, bitwise operations occur at binary level so we performed Bitwise And on 85 and 170 and their resultant after bitwise operation was 0
+As discussed earlier, bitwise operations occur at binary level so we performed Bitwise AND on 85 and 170 and their resultant after bitwise operation was 0
 Let me explain this further:
 So the binaries of 85 and 170 are 
-Binary Of 85 = 01010101
-Binary Of 170 = 10101010
-Resultant = Binary Of 85 & Binary Of 170 = 00000000
-In the above example, When the bitwise AND operator & is applied to these two values, it compares each bit of the first operand (A) to the corresponding bit of the second operand (B). If both bits are 1, the corresponding result bit is set to 1. If either or both bits are 0, the corresponding result bit is set to 0.
-In this case, we can see that the output is 00000000.
+Binary Of 85 = `01010101`
+Binary Of 170 = `10101010`
+Resultant = Binary Of 85 & Binary Of 170 = `00000000`
+In the above example, When the bitwise AND operator `&` is applied to these two values, it compares each bit of the first operand (A) to the corresponding bit of the second operand (B). If both bits are 1, the corresponding result bit is set to 1. If either or both bits are 0, the corresponding result bit is set to 0.
+In this case, we can see that the output is `00000000`.
 Bitwise AND operator is very useful in situations where we need to check if certain flags or options are set in a variable, masking certain bits to extract specific information from a value, or check if a number is odd or even.
+
 ## Assignment
 
 Examples : = , += , -= , *= , /= , %=
