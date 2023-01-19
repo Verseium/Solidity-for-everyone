@@ -136,7 +136,7 @@ Following are the commonly used logical operators in Solidity:
 1. `&&` : Logical AND operator, returns true if both the operands are true.
 2. `||` : Logical OR operator, returns true if any one of the operands is true.
 3. `!` : Logical NOT operator, negates the value of the operand.
-
+### Hands on Practice
 ```pragma solidity ^0.8.0;
 
 contract StudentEvaluation {
