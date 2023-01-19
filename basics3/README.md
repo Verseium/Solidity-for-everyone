@@ -18,6 +18,44 @@ In Solidity, arithmetic operators are used to perform mathematical operations on
 6. `++` : The increment operator is used to increase the value of a variable by 1.
 
 7. `--` : The decrement operator is used to decrease the value of a variable by 1.
+### Hands on Practice
+Following is a demonstration of how arithmetic operators can be used in a solidity program
+pragma solidity ^0.8.0;
+
+// This is an example of a contract called Calculator which demonstrates the basic usage of arithmetic operations
+
+contract Calculator {
+    // In this statement a function is declared and it takes the input parameters of `a` and `b`.
+    // The same format is used to declare functions throughout this contract
+    function add(uint a, uint b) public pure returns (uint) {  
+        return a + b;  // Perform the add operation and return the result.
+    }
+
+    function subtract(uint a, uint b) public pure returns (uint) {
+        return a - b; // Perform the subtract operation and return the result.
+    }
+
+    function multiply(uint a, uint b) public pure returns (uint) {
+        return a * b;// Perform the multiply operation and return the result.
+    }
+
+    function divide(uint a, uint b) public pure returns (uint) {
+        return a / b; // Perform the divide operation and return the result.
+    }
+
+    function modulo(uint a, uint b) public pure returns (uint) {
+        return a % b; // Perform the modulus operation and return the result.
+    }
+    function increment(uint a) public pure returns (uint) {
+        a++;
+        return a ; // Perform the increment operation and return the result.
+    }
+    function decrement(uint a) public pure returns (uint) {
+        a--;
+        return a ; // Perform the decrement operation and return the result.
+    }
+
+}
 
 ## Relational
 
