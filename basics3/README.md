@@ -20,6 +20,7 @@ In Solidity, arithmetic operators are used to perform mathematical operations on
 7. `--` : The decrement operator is used to decrease the value of a variable by 1.
 ### Hands on Practice
 Following is a demonstration of how arithmetic operators can be used in a solidity program
+```
 pragma solidity ^0.8.0;
 
 // This is an example of a contract called Calculator which demonstrates the basic usage of arithmetic operations
@@ -56,7 +57,7 @@ contract Calculator {
     }
 
 }
-
+```
 ## Relational
 
 Examples : == , != , > , < , >= , <= 
