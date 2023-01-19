@@ -137,6 +137,38 @@ Following are the commonly used logical operators in Solidity:
 2. `||` : Logical OR operator, returns true if any one of the operands is true.
 3. `!` : Logical NOT operator, negates the value of the operand.
 
+```pragma solidity ^0.8.0;
+
+contract StudentEvaluation {
+    // Declare state variables to store assignment and quiz marks
+    uint public assignment;
+    uint public quizzes;
+    bool isEligible;
+
+    function setMarks(uint _assignment, uint _quizzes) public {
+        // check if either assignment or quiz marks is greater than 50
+        if (_assignment > 50 && _quizzes > 50) { //using AND operator here
+            isEligible = true;
+        }else if(_assignment < 50 || _quizzes < 50){ // using OR operator here
+            isEligible = !true; // using the NOT operator here
+        }
+        else {
+            isEligible = false;
+        }
+        
+        assignment = _assignment;
+        quizzes = _quizzes;
+    }
+
+    function isEligibleForFinalExam() public view returns (bool) {
+        // check if student is not eligible
+        return isEligible;
+    }
+}
+
+```
+![Calculator](https://user-images.githubusercontent.com/88394912/213497409-85747451-d20d-430a-b2b4-0b3d62ce3b61.PNG)
+
 ## Bitwise
 
 Examples : & (Bitwise AND) , | (Bitwise OR) , ^ (Bitwise OR) , ~ (Bitwise Not) , << (Left Shift), >> (Right Shift)
