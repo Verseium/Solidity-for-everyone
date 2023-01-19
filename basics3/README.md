@@ -227,7 +227,7 @@ contract BitwiseOperations {
 ```
 ![bitwiseand](https://user-images.githubusercontent.com/88394912/213513101-846b6082-8ad3-4319-a3ae-8d1c63fce3a7.PNG)
 
-Above is an implementation of the bitwise and. 
+Above is an implementation of the Bitwise AND. 
 As discussed earlier, bitwise operations occur at binary level so we performed Bitwise AND on 85 and 170 and their resultant after bitwise operation was 0
 Let me explain this further:
 So the binaries of 85 and 170 are 
