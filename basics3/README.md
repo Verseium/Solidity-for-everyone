@@ -170,7 +170,7 @@ contract StudentEvaluation {
 ![Calculator](https://user-images.githubusercontent.com/88394912/213497409-85747451-d20d-430a-b2b4-0b3d62ce3b61.PNG)
 
 ## Bitwise
-Bitwise operators are a set of operators in programming languages that operate on the individual bits of a binary number. These operators are typically used to manipulate binary data at a low level, such as when working with memory or network communication.
+Bitwise operators are a set of operators in programming languages that operate on the individual bits of a binary number. These operators are typically used to manipulate binary data at a low level, such as when working with memory or network communication. Bitwise operations are mostly done at a binary level we will talk about this later on as well.
 Bitwise operations are very important in solidity for the following reasons:
 1. Smart contract security: Bitwise operations can be used to implement access control and permission mechanisms in smart contracts. For example, a smart contract could use a bitwise flag to represent the permissions of an account, where each bit corresponds to a specific action that the account is allowed to perform. Bitwise operations can also be used to mask the data, making it harder to understand the data as it's stored in the contract.
 
@@ -189,7 +189,7 @@ Following are the commonly used logical operators in Solidity:
 6. `>>` (right shift) - The left operand is shifted right by the number of bits specified by the right operand.
 
 ### Hands on Practice
-pragma solidity ^0.8.0;
+``` pragma solidity ^0.8.0;
 
 contract BitwiseOperations {
     uint public a;
@@ -224,10 +224,19 @@ contract BitwiseOperations {
         return a >> 2; // right shift
     }
 }
+```
+![bitwiseand](https://user-images.githubusercontent.com/88394912/213513101-846b6082-8ad3-4319-a3ae-8d1c63fce3a7.PNG)
 
-
-Examples : & (Bitwise AND) , | (Bitwise OR) , ^ (Bitwise OR) , ~ (Bitwise Not) , << (Left Shift), >> (Right Shift)
-
+Above is an implementation of the bitwise and. 
+As discussed earlier, bitwise operations occur at binary level so we performed Bitwise And on 85 and 170 and their resultant after bitwise operation was 0
+Let me explain this further:
+So the binaries of 85 and 170 are 
+BinaryOf85 = 01010101
+BinaryOf170 = 10101010
+Resultant = BinaryOf85 & BinaryOf170 = 00000000
+In the above example, When the bitwise AND operator & is applied to these two values, it compares each bit of the first operand (A) to the corresponding bit of the second operand (B). If both bits are 1, the corresponding result bit is set to 1. If either or both bits are 0, the corresponding result bit is set to 0.
+In this case, we can see that the output is 00000000.
+Bitwise AND operator is very useful in situations where we need to check if certain flags or options are set in a variable, masking certain bits to extract specific information from a value, or check if a number is odd or even.
 ## Assignment
 
 Examples : = , += , -= , *= , /= , %=
