@@ -61,8 +61,65 @@ In the last two functions (`increment` and `decrement`) of the above example, it
 
 
 ## Relational
+Relational operators are usually used to test or define some kind of relationship between various entities.
+For instance a variable `a` has a value of `10` and another value `b` has a value of `20` , the relationship that exists between them is that b is greater than a and a is smaller than b we can define and test this relation using relational operators.
 
-Examples : == , != , > , < , >= , <= 
+Following are the commonly used relational operators in Solidity:
+
+1. `==` : Equality operator, returns true if the operands are equal.
+2. `!=` : Inequality operator, returns true if the operands are not equal.
+3. `>`  : Greater than operator, returns true if the left operand is greater than the right operand.
+4. `<`  : Less than operator, returns true if the left operand is less than the right operand.
+5. `>=` : Greater than or equal to operator, returns true if the left operand is greater than or equal to the right operand.
+6. `<=` : Less than or equal to operator, returns true if the left operand is less than or equal to the right operand.
+
+pragma solidity ^0.8.0;
+
+contract RelationalOperators {
+    // Declare two state variables 
+    uint public a;
+    uint public b;
+
+    // A setter function to set the values of `a` and `b`
+    function setValues(uint _a, uint _b) public {
+        a = _a;
+        b = _b;
+    }
+
+    // Function to check equality
+    // `bool` stands for boolean which is either `true` or `false` and if the relationship is true then it would return `true` and if not then `false` will be returned 
+    function isEqual() public view returns (bool) {
+        return (a == b);
+    }
+
+    // Function to check inequality
+    function isNotEqual() public view returns (bool) {
+        return (a != b);
+    }
+
+    // Function to check if `a` is greater than `b`
+    function isGreaterThan() public view returns (bool) {
+        return (a > b);
+    }
+
+    // Function to check if `a` is less than `b`
+    function isLessThan() public view returns (bool) {
+        return (a < b);
+    }
+
+    // Function to check if `a` is greater than or equal to `b`
+    function isGreaterThanEqual() public view returns (bool) {
+        return (a >= b);
+    }
+
+    // Function to check if `a` is less than or equal to `b`
+    function isLessThanEqual() public view returns (bool) {
+        return (a <= b);
+    }
+}
+
+
+
 
 ## Logical
 
