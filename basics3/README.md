@@ -311,10 +311,9 @@ Conditionals are used in programming to control the flow of execution of a progr
 Following are the most commonly followed conditionals in solidity:
 1. `if` statement
 2. `if-else` statement
-3. `if-else if-else` statement
-4. `switch-case` statement
-5. Ternary operator `? :`
+3. Ternary operator `? :`
 
+It is worth noting that unlike many other programming language Solidity does not support switch-case conditionals.
 ### Hands on Practice 
 
 Following is a demonstration of how above mentioned conditionals can be used in a solidity program
@@ -349,24 +348,6 @@ contract ConditionalStatements {
     function checkEvenOrOdd() public {
         result = (num1 % 2 == 0) ? "Number 1 is even" : "Number 1 is odd";
     }
-
-    // Define a function checkNumberType that uses a switch-case statement
-    function checkNumberType() public   {
-        switch (num2) {
-            case 0:
-                result = "Number 2 is zero";
-                break;
-            case 1:
-                result = "Number 2 is one";
-                break;
-            case 2:
-                result = "Number 2 is two";
-                break;
-            default:
-                result = "Number 2 is greater than two";
-                break;
-        }
-    }
-} ``` 
+} 
 
 
