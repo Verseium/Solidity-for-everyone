@@ -58,6 +58,7 @@ contract Calculator {
 ```
 In the last two functions (`increment` and `decrement`) of the above example, it is worth noting that the increment and decrement operators are used as prefix operators, meaning they will first increment the value of `a` by 1 and then return the new value. But if we were to use it as a postfix operator (`return a++;`), it will return the value before the operator is applied. And the user will get the original value instead of the incremented value.
 
+![Calculator](https://user-images.githubusercontent.com/88394912/213490003-cfe132c8-3850-41a8-952a-49fecf4eeaec.PNG)
 
 
 ## Relational
@@ -127,7 +128,14 @@ contract RelationalOperators {
 
 ## Logical
 
-Examples : &&(Logical AND), || (Logical OR), ! (Logical NOT)
+Logical operators are used to evaluate one or more conditions and determine whether they are true or false. These operators are used to control the flow of execution in a program by making decisions based on the results of the evaluation. They allow developers to combine multiple conditions and make logical conclusions about the state of their application.
+Now lets say there is a student and his assignment and quizzes marks are some variables (named assignment and quizzes ) and both of their values have to be above 50 for him to be able to sit in the final exam. So the condition for him will be `assignment AND quizzes is greater than 50` and in solidity this condition will be written as `assignment && quizzes > 50 ;`
+
+Following are the commonly used logical operators in Solidity:
+
+1. `&&` : Logical AND operator, returns true if both the operands are true.
+2. `||` : Logical OR operator, returns true if any one of the operands is true.
+3. `!` : Logical NOT operator, negates the value of the operand.
 
 ## Bitwise
 
@@ -140,7 +148,7 @@ Examples : = , += , -= , *= , /= , %=
 ## Conditional
 
 Examples : if condition ? A : B
-
+ 
 
 
 
