@@ -48,16 +48,18 @@ contract Calculator {
         return a % b; // Perform the modulus operation and return the result.
     }
     function increment(uint a) public pure returns (uint) {
-        a++;
-        return a ; // Perform the increment operation and return the result.
+        return ++a ; // Perform the increment operation and return the result.
     }
     function decrement(uint a) public pure returns (uint) {
-        a--;
-        return a ; // Perform the decrement operation and return the result.
+                return --a ; // Perform the decrement operation and return the result.
     }
 
 }
 ```
+In the last two functions (`increment` and `decrement`) of the above example, it is worth noting that the increment and decrement operators are used as prefix operators, meaning they will first increment the value of `a` by 1 and then return the new value. But if we were to use it as a postfix operator (`return a++;`), it will return the value before the operator is applied. And the user will get the original value instead of the incremented value.
+
+
+
 ## Relational
 
 Examples : == , != , > , < , >= , <= 
