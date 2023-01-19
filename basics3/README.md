@@ -19,7 +19,7 @@ In Solidity, arithmetic operators are used to perform mathematical operations on
 
 7. `--` : The decrement operator is used to decrease the value of a variable by 1.
 ### Hands on Practice
-Following is a demonstration of how arithmetic operators can be used in a solidity program
+Following is a demonstration of how above mentioned arithmetic operators can be used in a solidity program
 ```
 pragma solidity ^0.8.0;
 
@@ -74,6 +74,8 @@ Following are the commonly used relational operators in Solidity:
 5. `>=` : Greater than or equal to operator, returns true if the left operand is greater than or equal to the right operand.
 6. `<=` : Less than or equal to operator, returns true if the left operand is less than or equal to the right operand.
 ### Hands on Practice 
+Following is a demonstration of how above mentioned relational operators can be used in a solidity program
+
 ```
 pragma solidity ^0.8.0;
 
@@ -137,6 +139,8 @@ Following are the commonly used logical operators in Solidity:
 2. `||` : Logical OR operator, returns true if any one of the operands is true.
 3. `!` : Logical NOT operator, negates the value of the operand.
 ### Hands on Practice
+Following is a demonstration of how above mentioned logical operators can be used in a solidity program
+
 ```pragma solidity ^0.8.0;
 
 contract StudentEvaluation {
@@ -189,6 +193,8 @@ Following are the commonly used logical operators in Solidity:
 6. `>>` (right shift) - The left operand is shifted right by the number of bits specified by the right operand.
 
 ### Hands on Practice
+Following is a demonstration of how above mentioned bitwise operators can be used in a solidity program
+
 ``` pragma solidity ^0.8.0;
 
 contract BitwiseOperations {
@@ -239,16 +245,128 @@ In this case, we can see that the output is `00000000`.
 Bitwise AND operator is very useful in situations where we need to check if certain flags or options are set in a variable, masking certain bits to extract specific information from a value, or check if a number is odd or even.
 
 ## Assignment
+Assignment operator assigns a value to an entity. That entity might be a variable or a struct or any other programming construct. In Solidity, it is used to assign a value to a variable or a memory location. It is used to give a value to a variable for the first time or to change the value of the variable after it has been assigned a value.
+Following are the most commonly used assignment operators in solidity:
+1. `=`  is the assignment operator
+2. `+=` is the addition assignment operator
+3. `-=` is the subtraction assignment operator
+4. `*=` is the multiplication assignment operator
+5. `/=` is the division assignment operator
+6. `%=` is the modulo assignment operator
 
-Examples : = , += , -= , *= , /= , %=
+### Hands on Practice 
+Following is a demonstration of how above mentioned assignment operators can be used in a solidity program
+
+``` pragma solidity ^0.8.0;
+
+// Define a new contract called Operators
+contract Operators {
+    // Declare two public variables num1 and num2 of type uint256
+    uint256 public num1;
+    uint256 public num2;
+
+    // Define a function setNumbers to set the values of num1 and num2
+    function setNumbers(uint256 _num1, uint256 _num2) public {
+        num1 = _num1;
+        num2 = _num2;
+    }
+
+    // Define a function add to add num1 and num2 and return the result
+    function add() public returns (uint256) {
+        num1 += num2;
+        return num1;
+    }
+
+    // Define a function subtract to subtract num2 from num1 and return the result
+    function subtract() public returns (uint256) {
+        num1 -= num2;
+        return num1;
+    }
+
+    // Define a function multiply to multiply num1 and num2 and return the result
+    function multiply() public returns (uint256) {
+        num1 *= num2;
+        return num1;
+    }
+
+    // Define a function divide to divide num1 by num2 and return the result
+    function divide() public returns (uint256) {
+        num1 /= num2;
+        return num1;
+    }
+
+    // Define a function modulo to perform modulo operation on num1 and num2 and return the result
+    function modulo() public returns (uint256) {
+        num1 %= num2;
+        return num1;
+    }
+}
+``` 
+![assignment](https://user-images.githubusercontent.com/88394912/213567903-bafa1c17-bee9-44c1-8e65-f6253d0d1865.PNG)
+
 
 ## Conditional
+Conditionals are used in programming to control the flow of execution of a program based on certain conditions. They are used to make decisions and perform actions based on certain criteria.It is something very closely related to our actual real lives.If the traffic light is red, we stop the car. If it's green, we proceed. What this this ? a conditional. If you go against the condition you will get result that youre not expecting.  
 
-Examples : if condition ? A : B
- 
+Following are the most commonly followed conditionals in solidity:
+1. `if` statement
+2. `if-else` statement
+3. `if-else if-else` statement
+4. `switch-case` statement
+5. Ternary operator `? :`
 
+### Hands on Practice 
 
+Following is a demonstration of how above mentioned conditionals can be used in a solidity program
 
+```
+pragma solidity ^0.8.0;
 
+contract ConditionalStatements {
+    // Declare three public variables num1, num2, result of type uint256 and string
+    uint256 public num1;
+    uint256 public num2;
+    string public result;
+
+    // Define a function setNumbers to set the values of num1 and num2
+    function setNumbers(uint256 _num1, uint256 _num2) public {
+        num1 = _num1;
+        num2 = _num2;
+    }
+
+    // Define a function checkNumber that uses an if-else conditional statement
+    function checkNumber() public {
+        if (num1 == num2) {
+            result = "Numbers are equal";
+        } else if (num1 > num2) {
+            result = "Number 1 is greater than Number 2";
+        } else {
+            result = "Number 2 is greater than Number 1";
+        }
+    }
+
+    // Define a function checkEvenOrOdd that uses a ternary operator
+    function checkEvenOrOdd() public {
+        result = (num1 % 2 == 0) ? "Number 1 is even" : "Number 1 is odd";
+    }
+
+    // Define a function checkNumberType that uses a switch-case statement
+    function checkNumberType() public   {
+        switch (num2) {
+            case 0:
+                result = "Number 2 is zero";
+                break;
+            case 1:
+                result = "Number 2 is one";
+                break;
+            case 2:
+                result = "Number 2 is two";
+                break;
+            default:
+                result = "Number 2 is greater than two";
+                break;
+        }
+    }
+} ``` 
 
 
