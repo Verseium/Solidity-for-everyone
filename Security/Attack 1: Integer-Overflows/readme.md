@@ -15,4 +15,24 @@ In Solidity, integer overflow can affect different data types, including `uint8`
 `uint256`: `uint256` is the largest integer data type in Solidity and can store values between 0 and 2^256-1. Despite its large range, `uint256` is still susceptible to overflow if the result of an arithmetic operation is
 
 ## Vulnerable Fund Transfer Contract
-` 
+` pragma solidity ^0.8.0;
+
+contract VulnerableFundTransfer {
+    address payable public sender;
+    address payable public receiver;
+    uint8 public amount;
+
+    function vulnerableFundsTransfer(address payable _sender, address payable _receiver, uint8 _amount) public {
+        sender = _sender;
+        receiver = _receiver;
+        amount = _amount;
+    }
+
+    function transferFunds() public payable {
+        uint8 amountToSend = uint8(amount) + uint8(2);
+        sender.transfer(amountToSend);
+        receiver.transfer(amountToSend);
+    }
+}
+`
+
