@@ -13,7 +13,7 @@ In Solidity, integer overflow can affect different data types, including `uint8`
 `uint8`: This is the smallest integer data type in Solidity and can store values between 0 and 255. If an overflow occurs with a `uint8` variable, the result will wrap around to a value within the defined range, potentially leading to unintended consequences. For example: `250 + 10` with a `uint8` data type would result in `4`, not `260`.
 
 `uint256`: `uint256` is the largest integer data type in Solidity and can store values between 0 and 2^256-1. Despite its large range, `uint256` is still susceptible to overflow if the result of an arithmetic operation is
-
+### Hands on Practice
 ## Integer Overflow Contract
 ``` 
 // The Math contract allows users to perform addition and subtraction on uint8 integers
@@ -37,11 +37,6 @@ contract Math {
 contract Attacker {
     Math public mathContract;
     
-    // Constructor function that sets the address of the Math contract to be attacked
-    constructor(address mathAddress) {
-        mathContract = Math(mathAddress);
-    }
-    
     // Function that performs an integer overflow attack by adding 255 and 10
     function attack() public {
         mathContract.add(255, 10); // Overflow occurs here
@@ -54,26 +49,15 @@ contract Attacker {
 } 
 
 ```
+![overfloww](https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG)
+![OBERFLOW](https://user-images.githubusercontent.com/88394912/219149523-ca2afdcf-9109-4ac0-a15c-7b3c18afa949.PNG)
 
-This code block contains the two contracts, Math and Attacker. The Math contract has two functions, `add` and `subtract`, which perform addition and subtraction on uint8 integers respectively. The Attacker contract has a constructor function that takes the address of a Math contract instance and saves it as a public variable. The Attacker contract also has two functions, `attack` and `getResult`. The `attack` function performs an integer overflow attack by calling the `add` function with the values `255` and `10`. The `getResult` function returns the current value of the result variable in the Math contract.
+### How to Prevent Overflows?
 
-![overflow](https://user-images.githubusercontent.com/88394912/219140563-ff3ab281-892c-406b-8ab8-32016bff70a2.png)
+Following are 10 most common and efficient ways to prevent an interger overflow attack:
+1. 0.8.0 version of Solidity: This method is by far the best possible solution to prevent integer overflows. Using this method a developer can make use of the strict-math safety features available in the 0.8.0 version of Solidity.The 0.8.0 library for Solidity provides an effective way to prevent integer overflows. It contains functions that can be used to check for overflow and underflow conditions when implementing arithmetic operations. It also provides the explicit modulo operator to handle division operations and the SafeMath library for all arithmetic operations. Furthermore, it has strict-math safety features which can be used to increase the size of variables if necessary and avoid using large numbers in calculations. All these features help to identify and prevent any potential overflows and ensure secure and reliable smart contract operations.
 
-1. Use BigNumber library: BigNumber library is a library that helps to handle large numbers in Solidity. It is a library written in solidity that provides basic arithmetic operations on large numbers and also provides a way to detect and prevent integer overflow. The following code snippet shows how to use BigNumber library to prevent integer overflow.
-
-```
-import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
-contract MyContract {
-  using SafeMath for uint256;
-  uint256 a = 100;
-  uint256 b = 200;
-  
-  // Use SafeMath library to prevent integer overflow
-  uint256 c = a.add(b);
-}
-```
-
-2. Use the SafeMath library: The OpenZeppelin SafeMath library provides arithmetic operations that throw exceptions when integer overflows occur. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
+2. Use BigNumber library: BigNumber library is a library that helps to handle large numbers in Solidity. It is a library written in solidity that provides basic arithmetic operations on large numbers and also provides a way to detect and prevent integer overflow. The following code snippet shows how to use BigNumber library to prevent integer overflow.
 
 ```
 import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
@@ -87,7 +71,21 @@ contract MyContract {
 }
 ```
 
-3. Use the assert() function: The assert() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the assert() function to prevent integer overflow.
+3. Use the SafeMath library: The OpenZeppelin SafeMath library provides arithmetic operations that throw exceptions when integer overflows occur. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
+
+```
+import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+contract MyContract {
+  using SafeMath for uint256;
+  uint256 a = 100;
+  uint256 b = 200;
+  
+  // Use SafeMath library to prevent integer overflow
+  uint256 c = a.add(b);
+}
+```
+
+4. Use the assert() function: The assert() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the assert() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -103,7 +101,7 @@ contract MyContract {
 }
 ```
 
-4. Use the require() function: The require() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the require() function to prevent integer overflow.
+5. Use the require() function: The require() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the require() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -119,7 +117,7 @@ contract MyContract {
 }
 ```
 
-5. Use the max() function: The max() function is used to return the maximum of two numbers. The following code snippet shows how to use the max() function to prevent integer overflow.
+6. Use the max() function: The max() function is used to return the maximum of two numbers. The following code snippet shows how to use the max() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -134,7 +132,7 @@ contract MyContract {
 }
 ```
 
-6. Use the min() function: The min() function is used to return the minimum of two numbers. The following code snippet shows how to use the min() function to prevent integer overflow.
+7. Use the min() function: The min() function is used to return the minimum of two numbers. The following code snippet shows how to use the min() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -149,7 +147,7 @@ contract MyContract {
 }
 ```
 
-7. Use the SafeSend library: The SafeSend library provides a set of functions that can be used to safely send ether without the risk of integer overflows. The following code snippet shows how to use the SafeSend library to prevent integer overflow.
+8. Use the SafeSend library: The SafeSend library provides a set of functions that can be used to safely send ether without the risk of integer overflows. The following code snippet shows how to use the SafeSend library to prevent integer overflow.
 
 ```
 import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/send/SafeSend.sol";
@@ -165,7 +163,7 @@ contract MyContract {
 }
 ```
 
-8. Use the SafeMath library: The SafeMath library provides a set of functions that can be used to safely perform arithmetic operations without the risk of integer overflows. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
+9. Use the SafeMath library: The SafeMath library provides a set of functions that can be used to safely perform arithmetic operations without the risk of integer overflows. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
 
 ```
 import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
@@ -177,24 +175,6 @@ contract MyContract {
   // Use SafeMath library to prevent integer overflow
   function add(uint256 a, uint256 b) public returns (uint256) {
     uint256 c = a.add(b);
-    return c;
-  }
-}
-```
-
-9. Use the SafeMath library: The SafeMath library provides a set of functions that can be used to safely perform arithmetic operations without the risk of integer overflows. The following code snippet shows how to use the SafeMath library to detect and prevent integer overflow.
-
-```
-import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
-contract MyContract {
-  using SafeMath for uint256;
-  uint256 a = 100;
-  uint256 b = 200;
-  
-  // Use SafeMath library to detect and prevent integer overflow
-  function add(uint256 a, uint256 b) public returns (uint256) {
-    uint256 c = a.add(b);
-    require(a.add(b) == c, "Integer overflow detected");
     return c;
   }
 }
