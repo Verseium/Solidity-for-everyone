@@ -13,7 +13,7 @@ In Solidity, integer overflow can affect different data types, including `uint8`
 `uint8`: This is the smallest integer data type in Solidity and can store values between 0 and 255. If an overflow occurs with a `uint8` variable, the result will wrap around to a value within the defined range, potentially leading to unintended consequences. For example: `250 + 10` with a `uint8` data type would result in `4`, not `260`.
 
 `uint256`: `uint256` is the largest integer data type in Solidity and can store values between 0 and 2^256-1. Despite its large range, `uint256` is still susceptible to overflow if the result of an arithmetic operation is
-### Hands on Practice
+# Hands on Practice
 ## Integer Overflow Contract
 ``` 
 // The Math contract allows users to perform addition and subtraction on uint8 integers
@@ -49,10 +49,30 @@ contract Attacker {
 } 
 
 ```
-![overfloww](https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG)
-![OBERFLOW](https://user-images.githubusercontent.com/88394912/219149523-ca2afdcf-9109-4ac0-a15c-7b3c18afa949.PNG)
+<figure>
+  <img src=![overfloww](https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG)
+ alt="Integer Overflow Contract">
+  <figcaption>Caption text here</figcaption>
+</figure>
 
-### How to Prevent Overflows?
+
+### A tip if the code isnt working
+![OBERFLOW](https://user-images.githubusercontent.com/88394912/219149523-ca2afdcf-9109-4ac0-a15c-7b3c18afa949.PNG)
+## Explaination of the code:
+The Integer Overflow Contract code that I've written demonstrates an integer overflow vulnerability in the `add` function, which can cause the result to be incorrect and unexpected. The `add` function takes two `uint8` parameters `a` and `b`, adds them together, and stores the result in the `result` variable.
+
+In the `add` function, the value of `a` is set to the maximum value of a `uint8` (255), and then `a` is added to `b`. When `a` is already at its maximum value and is added to any other value, it causes an integer overflow, which means the result wraps around to 0 and starts counting up again. In this case, the result is truncated to an 8-bit integer (the size of `result`), and the most significant bits are lost.
+
+For example, if `a` is set to 255 and `b` is set to 12, the result of `a + b` is 267. However, since `result` is only a `uint8`, it can only hold a value up to 255. When `result` is assigned the value of `a + b`, the most significant bits of the result are truncated, and only the least significant 8 bits are retained. In this case, the value of `result` will be 11 instead of 267. 
+
+Here's a more detailed description of what happens in the `add` function when i added 255 and 12 together:
+
+a = 255 (0b11111111)
+b = 12  (0b00001100)
+result = a + b
+       = 267 (0b100001011)
+       = 11  (0b00001011)  // Truncated to 8 bits
+# How to Prevent Overflows?
 
 Following are 10 most common and efficient ways to prevent an interger overflow attack:
 1. 0.8.0 version of Solidity: This method is by far the best possible solution to prevent integer overflows. Using this method a developer can make use of the strict-math safety features available in the 0.8.0 version of Solidity.The 0.8.0 library for Solidity provides an effective way to prevent integer overflows. It contains functions that can be used to check for overflow and underflow conditions when implementing arithmetic operations. It also provides the explicit modulo operator to handle division operations and the SafeMath library for all arithmetic operations. Furthermore, it has strict-math safety features which can be used to increase the size of variables if necessary and avoid using large numbers in calculations. All these features help to identify and prevent any potential overflows and ensure secure and reliable smart contract operations.
