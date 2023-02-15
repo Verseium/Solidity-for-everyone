@@ -50,7 +50,7 @@ contract Attacker {
 
 ```
 <figure>
-  <img src=![overfloww](https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG)
+  <img src="https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG"
  alt="Integer Overflow Contract">
   <figcaption>Caption text here</figcaption>
 </figure>
