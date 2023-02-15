@@ -105,7 +105,7 @@ contract MyContract {
 }
 ```
 
-4.`  Use the assert() function `: The assert() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the assert() function to prevent integer overflow.
+4. ` Use the assert() function `: The assert() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the assert() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -121,7 +121,7 @@ contract MyContract {
 }
 ```
 
-5.` Use the require() function `: The require() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the require() function to prevent integer overflow.
+5. ` Use the require() function `: The require() function can be used to check whether an expression evaluates to true or false. If the expression evaluates to false, the transaction is reverted. The following code snippet shows how to use the require() function to prevent integer overflow.
 
 ```
 contract MyContract {
@@ -183,7 +183,7 @@ contract MyContract {
 }
 ```
 
-9.` Use the SafeMath library `: The SafeMath library provides a set of functions that can be used to safely perform arithmetic operations without the risk of integer overflows. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
+9. ` Use the SafeMath library `: The SafeMath library provides a set of functions that can be used to safely perform arithmetic operations without the risk of integer overflows. The following code snippet shows how to use the SafeMath library to prevent integer overflow.
 
 ```
 import "github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
@@ -200,7 +200,7 @@ contract MyContract {
 }
 ```
 
-10. `Validate input values `: Input values should be validated before performing any operations. This helps to ensure that the operations will not cause integer overflow. The following code snippet shows how to validate input values to prevent integer overflow.
+10. ` Validate input values `: Input values should be validated before performing any operations. This helps to ensure that the operations will not cause integer overflow. The following code snippet shows how to validate input values to prevent integer overflow.
 
 ```
 contract MyContract {
