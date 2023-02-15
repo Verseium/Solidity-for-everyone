@@ -54,9 +54,8 @@ contract Attacker {
 } ```
 
 
-```
-This code block contains the two contracts, Math and Attacker. The Math contract has two functions, `add` and `subtract`, which perform addition and subtraction on uint8 integers respectively. The Attacker contract has a constructor function that takes the address of a Math contract instance and saves it as a public variable. The Attacker contract also has two functions, `attack` and `getResult`. The `attack` function performs an integer overflow attack by calling the `add` function with the values 255 and 10. The `getResult` function returns the current value of the result variable in the Math contract.
-```
+
+This code block contains the two contracts, Math and Attacker. The Math contract has two functions, `add` and `subtract`, which perform addition and subtraction on uint8 integers respectively. The Attacker contract has a constructor function that takes the address of a Math contract instance and saves it as a public variable. The Attacker contract also has two functions, `attack` and `getResult`. The `attack` function performs an integer overflow attack by calling the `add` function with the values `255` and `10`. The `getResult` function returns the current value of the result variable in the Math contract.
 
 
 
