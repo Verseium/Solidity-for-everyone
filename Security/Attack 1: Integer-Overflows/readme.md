@@ -16,24 +16,46 @@ In Solidity, integer overflow can affect different data types, including `uint8`
 
 ## Vulnerable Fund Transfer Contract
 ``` 
-pragma solidity ^0.8.0;
-contract VulnerableFundTransfer {
-    address payable public sender;
-    address payable public receiver;
-    uint8 public amount;
+// The Math contract allows users to perform addition and subtraction on uint8 integers
+// The Attacker contract will demonstrate an integer overflow attack on the Math contract
+pragma solidity ^0.7.0;
 
-    function vulnerableFundsTransfer(address payable _sender, address payable _receiver, uint8 _amount) public {
-        sender = _sender;
-        receiver = _receiver;
-        amount = _amount;
+contract Math {
+    uint8 public result;
+
+    // Adds two uint8 integers together and sets the result
+    function add(uint8 a, uint8 b) public {
+        result = a + b;
     }
 
-    function transferFunds() public payable {
-        uint8 amountToSend = uint8(amount) + uint8(2);
-        sender.transfer(amountToSend);
-        receiver.transfer(amountToSend);
+    // Subtracts one uint8 integer from another and sets the result
+    function subtract(uint8 a, uint8 b) public {
+        result = a - b;
     }
 }
+
+contract Attacker {
+    Math public mathContract;
+    
+    // Constructor function that sets the address of the Math contract to be attacked
+    constructor(address mathAddress) {
+        mathContract = Math(mathAddress);
+    }
+    
+    // Function that performs an integer overflow attack by adding 255 and 10
+    function attack() public {
+        mathContract.add(255, 10); // Overflow occurs here
+    }
+    
+    // Function that retrieves the current result of the Math contract
+    function getResult() public view returns (uint8) {
+        return mathContract.result();
+    }
+} 
+
+This code block contains the two contracts, Math and Attacker. The Math contract has two functions, add and subtract, which perform addition and subtraction on uint8 integers respectively. The Attacker contract has a constructor function that takes the address of a Math contract instance and saves it as a public variable. The Attacker contract also has two functions, attack and getResult. The attack function performs an integer overflow attack by calling the add function with the values 255 and 10. The getResult function returns the current value of the result variable in the Math contract.
+
+
 
 ```
 
