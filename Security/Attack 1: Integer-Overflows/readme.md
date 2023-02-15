@@ -14,7 +14,7 @@ In Solidity, integer overflow can affect different data types, including `uint8`
 
 `uint256`: `uint256` is the largest integer data type in Solidity and can store values between 0 and 2^256-1. Despite its large range, `uint256` is still susceptible to overflow if the result of an arithmetic operation is
 
-## Vulnerable Fund Transfer Contract
+## Integer Overflow Contract
 ``` 
 // The Math contract allows users to perform addition and subtraction on uint8 integers
 // The Attacker contract will demonstrate an integer overflow attack on the Math contract
