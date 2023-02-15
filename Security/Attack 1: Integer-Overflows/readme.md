@@ -51,7 +51,7 @@ contract Attacker {
     function getResult() public view returns (uint8) {
         return mathContract.result();
     }
-} ```
+} 
 
 
 
