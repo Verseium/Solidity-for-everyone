@@ -66,12 +66,14 @@ In the `add` function, the value of `a` is set to the maximum value of a `uint8`
 For example, if `a` is set to 255 and `b` is set to 12, the result of `a + b` is 267. However, since `result` is only a `uint8`, it can only hold a value up to 255. When `result` is assigned the value of `a + b`, the most significant bits of the result are truncated, and only the least significant 8 bits are retained. In this case, the value of `result` will be 11 instead of 267. 
 
 Here's a more detailed description of what happens in the `add` function when i added 255 and 12 together:
-
+```
 a = 255 (0b11111111)
 b = 12  (0b00001100)
 result = a + b
        = 267 (0b100001011)
        = 11  (0b00001011)  // Truncated to 8 bits
+
+```
 # How to Prevent Overflows?
 
 Following are 10 most common and efficient ways to prevent an interger overflow attack:
