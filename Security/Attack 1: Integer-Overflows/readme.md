@@ -52,11 +52,11 @@ contract Attacker {
 <figure>
   <img src="https://user-images.githubusercontent.com/88394912/219148723-e5fffd64-e3e0-48cf-9fff-7e6d1787214b.PNG"
  alt="Integer Overflow Contract">
-  <figcaption>Caption text here</figcaption>
+  <figcaption>Adding 255 and 12 in the contract resulting in an Integer Overflow Contract</figcaption>
 </figure>
 
 
-### A tip if the code isnt working
+### A tip if the code isnt working - set the compiler to version 0.7.0 or below to make this work.
 ![OBERFLOW](https://user-images.githubusercontent.com/88394912/219149523-ca2afdcf-9109-4ac0-a15c-7b3c18afa949.PNG)
 ## Explaination of the code:
 The Integer Overflow Contract code that I've written demonstrates an integer overflow vulnerability in the `add` function, which can cause the result to be incorrect and unexpected. The `add` function takes two `uint8` parameters `a` and `b`, adds them together, and stores the result in the `result` variable.
